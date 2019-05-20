@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 ">
+      <h1>Update Order List</h1>
+      <div class="form-group">
+        <label for="timeStamp">Time Stamp {{id.value}}</label>
+        <input type="date" [formControl]="timestamp" class="form-control" id="timeStamp" aria-describedby="timeStamp" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="total">Total</label>
+        <input type="text" [formControl]="total" class="form-control" id="total" aria-describedby="total" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="customerName">Customer Name</label>
+        <input type="text" [formControl]="customer" class="form-control" id="customerName" aria-describedby="customerName" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="items">Items</label>
+        <input type="text" [formControl]="items" class="form-control" id="items" aria-describedby="items" placeholder="">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addOrder()">Add order</button>&nbsp;
+      <button type="button" class="btn btn-secondary" (click)="navigateBack()">Cancel</button>
+    </div>
+  </div>
+</div>

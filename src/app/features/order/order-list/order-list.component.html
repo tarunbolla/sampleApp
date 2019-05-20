@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Order List</h1>
+      <table class="table">
+        <tr class="row">
+          <th class="col">Id</th>
+          <th class="col">Timestamp</th>
+          <th class="col">Total</th>
+          <th class="col">Customer</th>
+          <th class="col">Items</th>
+          <th class="col"></th>
+        </tr>
+        <ng-container *ngFor="let order of orders">
+          <tr class="row order" [ngClass] = "{ 'highlight' : order.id == id }" (mouseover)="highlightRow(order)" (click)="navigateToDetail(order.id)">
+            <td class="col">{{ order.id }}</td>
+            <td class="col">{{ order.timestamp }}</td>
+            <td class="col">{{ order.total | currency: 'USD': 'symbol-narrow' }}</td>
+            <td class="col">{{ order.customer }}</td>
+            <td class="col">{{ order.items }}</td>
+            <td class="col"><span (click)="editOrder(order.id)">Edit</span></td>
+          </tr>
+        </ng-container>
+      </table>
+      <button type="button" class="btn btn-primary" routerLink="/order/edit/0">Add order</button>
+    </div>
+  </div>
+</div> 
+
